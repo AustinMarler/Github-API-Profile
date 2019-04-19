@@ -26,6 +26,11 @@ h3, h4 {
   margin: 0;
 }
 
+h6 {
+  margin: 1em 0;
+  display: inline;
+}
+
 .flexColumn {
   display: flex;
   flex-direction: column;
@@ -147,13 +152,15 @@ h3, h4 {
   background-position: center center;
   background-size: 100%;
   background-repeat: no-repeat;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
 }
 
 #profileStatus {
   position: relative;
   border: 1px solid lightgray;
   border-bottom-right-radius: 4px;
-  border-bottom-left-radius: 4px; 
+  border-bottom-left-radius: 4px;
 }
 
 #profileStatus p {
@@ -191,6 +198,40 @@ h3, h4 {
   font-weight: 300;
   font-size: 20px;
   color: rgb(91, 91, 91);
+}
+
+#moreDetails {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+}
+
+.detailLine {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 2px 0;
+}
+
+.detailIcon {
+  width: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+div.detailLine a, div.detailLine p {
+  font-size: 14px;
+  padding-left: 3px;
+  margin: 4px 0;
+}
+
+div.detailLine a {
+  text-decoration: none;
+  color: #0366d6;
+}
+
+div.detailLine a:hover {
+  text-decoration: underline;
 }
 
 #editButton {
@@ -379,4 +420,36 @@ h3, h4 {
 
 #starButton button:active {
   border: 1px solid black;
+}
+
+#footerInner {
+  max-width: 1012px;
+  width: 980px;
+  margin-right: auto;
+  margin-left: auto;
+  display: flex;
+  justify-content: space-between;
+  padding: 32px 0;
+  margin-top: 32px;
+  font-size: 12px;
+  border-top: 1px solid lightgray; 
+}
+
+#footerInner a {
+  text-decoration: none;
+  color: #0366d6;
+}
+
+#footerLeft p, #footerInner a {
+  margin: 0 10px;
+}
+
+#footerLeft p {
+  margin: 0;
+  display: inline;
+}
+
+#footerIcon {
+  color: lightgray;
+  font-size: 24px;
 }

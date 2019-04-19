@@ -2,12 +2,12 @@ import React, { Component } from 'react';
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGrinAlt } from '@fortawesome/free-regular-svg-icons'
-import { faCaretDown, faBook } from '@fortawesome/free-solid-svg-icons'
+import { faCaretDown, faBook, faLink, faMapMarkerAlt, faAt } from '@fortawesome/free-solid-svg-icons'
 import { connect } from 'react-redux'
 import { getData } from '../actions/actions';
 import ReposListItem from './ReposListItem'
 
-library.add(faGrinAlt, faCaretDown, faBook)
+library.add(faGrinAlt, faCaretDown, faBook, faLink, faMapMarkerAlt, faAt)
 
 class Body extends Component {
   componentDidMount() {
@@ -31,6 +31,20 @@ class Body extends Component {
             <div id="userNames">
               <h3>{this.props.name}</h3>
               <h4>{this.props.username}</h4>
+            </div>
+            <div id="moreDetails">
+              <div className="detailLine">
+                <div className="detailIcon"><FontAwesomeIcon icon={faAt} /></div>
+                <a href="/">{this.props.email}</a>
+              </div>
+              <div className="detailLine">
+                <div className="detailIcon"><FontAwesomeIcon icon={faMapMarkerAlt} /></div>
+                <p>{this.props.location}</p>
+              </div>
+              <div className="detailLine">
+                <div className="detailIcon"><FontAwesomeIcon icon={faLink} /></div>
+                <a href="/">{this.props.htmlURL}</a>
+              </div>
             </div>
             <div id="editButton">
               <button type="button" onClick={this.checkProps}>Edit</button>
@@ -71,6 +85,9 @@ function mapStateToProps(appState) {
     username: appState.userData.login,
     name: appState.userData.name,
     numRepos: appState.userData.public_repos,
+    htmlURL: appState.userData.html_url,
+    location: appState.userData.location,
+    email: appState.userData.email,
     reposData: appState.reposData
   }
 }
