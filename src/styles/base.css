@@ -14,9 +14,369 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  min-width: 1012px;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+h3, h4 {
+  margin: 0;
+}
+
+.flexColumn {
+  display: flex;
+  flex-direction: column;
+}
+
+#headerContainer {
+  height: 64px;
+  background-color: #24292e;
+}
+
+#header {
+  display: flex;
+  padding: 16px;
+  flex-wrap: nowrap;
+  color: #fff;
+  height: 64px;
+  align-items: center;
+}
+
+.headerItem {
+  margin-right: 10px;
+}
+
+#headerLogo {
+  font-size: 32px;
+}
+
+#headerSearch {
+  position: relative;
+}
+
+#headerSearch, #headerSearch input {
+  width: 300px;
+}
+
+#headerSearch input {
+  padding: 5px 10px;
+  outline: none;
+  background-color: rgb(74, 77, 80);
+  border: none;
+  border-radius: 4px;
+  height: 28px;
+}
+
+#headerSearch input:focus {
+  color: black;
+  background-color: white;
+}
+
+#headerSearch input::placeholder {
+  color: rgb(136, 137, 139);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+#headerSearch img {
+  position: absolute;
+  right: 0;
+  margin: 4px;
+  margin-right: 8px;
+}
+
+#headerNav {
+  font-weight: 800;
+  font-size: 14px;
+  width:100%;
+}
+
+#headerNav a {
+  text-decoration: none;
+  color: inherit;
+  margin-right: 10px;
+}
+
+#headerNav a:hover {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+#headerOther {
+  width: 10%;
+  justify-content: flex-end;
+}
+
+#headerOther div.headerOtherItem {
+  margin-left: 10px;
+}
+
+#headerOther, #createNewDropDown, #profileDropDown {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+#headerProfileImage {
+  width: 20px;
+  height: 20px;
+  background-position: center center;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  border-radius: 4px;
+}
+
+#innerBodyContainer {
+  max-width: 1012px;
+  width: 980px;
+  margin-top: 24px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+#userColumn {
+  width: 229px;
+  float: left;
+  margin-right: 24px;
+}
+
+#profilePic {
+  width: 100%;
+  height: 229px;
+  background-position: center center;
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+#profileStatus {
+  position: relative;
+  border: 1px solid lightgray;
+  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 4px; 
+}
+
+#profileStatus p {
+  color: rgb(100, 100, 100);
+  font-weight: 500;
+  font-size: 14px;
+  padding: 20px 0 10px 10px;
+  margin: 0;
+}
+
+#smileyIcon {
+  color: blue;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: -15px;
+  left: 20px;
+  background-color: white;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+}
+
+#userNames {
+  margin-top: 15px;
+}
+
+#userNames h3 {
+  font-weight: 600;
+  font-size: 28px;
+}
+
+#userNames h4 {
+  font-weight: 300;
+  font-size: 20px;
+  color: rgb(91, 91, 91);
+}
+
+#editButton {
+  margin-top: 25px;
+}
+
+#editButton button {
+  width: 100%;
+  border-radius: .25em;
+  border: 1px solid rgba(27,31,35,.2);
+  padding: 5px 10px;
+  font-size: 12px;
+  color: black;
+  background-color: #eff3f6;
+  font-weight: 500;
+  cursor: pointer;
+  outline: none;
+}
+
+#editButton button:hover {
+  background-color: #e5e9ec;
+  border: 1px solid rgba(10, 12, 14, 0.315);
+}
+
+.reposListItem, #reposNav, #reposSearch {
+  border-bottom: 1px solid lightgray;
+  padding-bottom: 20px;
+}
+
+#reposNav {
+  margin-top: 12px;
+}
+
+#reposNav a {
+  color: rgb(100, 100, 100);
+  font-size: 14px;
+  text-decoration: none;
+  padding: 5px;
+  margin-right: 16px;
+  padding-bottom: 18px;
+}
+
+#reposNav a.unselectedRepoNav:hover {
+  border-bottom: 2px solid rgb(153, 153, 153);
+}
+
+#reposNav a.selectedRepoNav {
+  border-bottom: 2px solid red;
+  color: rgb(50, 50, 50);
+  font-weight: 600;
+}
+
+#reposNav a span {
+  border-radius: 50%;
+  font-size: 12px;
+  font-weight: 500;
+  color: rgb(70, 70, 70);
+  background-color: rgb(240, 240, 240);
+  padding: 0 5px;
+}
+
+#reposSearch {
+  margin: 20px 0;
+  display: flex;
+}
+
+#reposSearch input {
+  padding: 10px 10px;
+  border-radius: 4px;
+  width: 55%;
+  border: 1px solid #d1d5da;
+  box-shadow: inset 0 1px 2px rgba(27,31,35,.075);
+}
+
+.typeButton, .languageButton, .newButton {
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  height: 35px;
+  background-color: #eff3f6;
+}
+
+.typeButton {
+  margin-left: 20px;
+  margin-right: 3px;
+}
+
+.newButton {
+  margin-left: 39px;  
+}
+
+.dropCategory {
+  color: rgb(120, 120, 120);
+}
+
+#reposSearch button.newButton {
+  background-color: rgb(43, 190, 74);
+  color: white;
+}
+
+#reposSearch input::placeholder {
+  font-size: 14px;
+  font-weight: 500;
+  color: rgb(182, 177, 177);
+}
+
+.reposListItem {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 40px;
+}
+
+#repoTitleDiv p {
+  font-weight: 700;
+  font-size: 20px;
+  color: #0366d6;
+  margin-top: 0;
+}
+
+#repoTitleDiv p:hover {
+  text-decoration: underline;
+}
+
+.repoLeftSide, .repoRightSide {
+  margin-top: 20px;
+}
+
+.repoRightSide {
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+#repoDetails, .repoRightSide {
+  display: flex;
+}
+
+#repoDetails {
+  align-items: center;
+}
+
+#repoDetails div {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+#repoDetails p {
+  margin: 0;
+  font-size: 12px;
+  color: #586069;
+  font-weight: 500;
+}
+
+.HTML {
+  background-color: rgb(223, 66, 34)
+}
+
+.CSS {
+  background-color: rgb(76, 53, 113)
+}
+
+.JavaScript {
+  background-color: rgb(239, 219, 80)
+}
+
+#activityBar {
+  width: 150px;
+  border-bottom: 2px solid rgb(212, 234, 170);
+  padding: 10px 0;
+}
+
+#starButton {
+  display: flex;
+  justify-content: flex-end;
+}
+
+#starButton button {
+  color: black;
+  font-weight: 500;
+  font-size: 12px;
+  padding: 6px 10px;
+  border-radius: 4px;
+  background-color: rgb(245, 245, 245);
+  outline: none;
+}
+
+#starButton button:active {
+  border: 1px solid black;
 }
